@@ -7,12 +7,13 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
+    "morgan": "^1.10.0",
     "node": "^17.7.2",
     "nodemon": "^2.0.16",
-    "styled": "^1.0.0"
+    "styled": "^1.0.0",
+    "uuidv4": "^6.2.13"
   },
   "scripts": {
     "start": "nodemon server.js"
-   
   }
 }
