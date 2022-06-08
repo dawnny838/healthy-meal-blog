@@ -25,11 +25,11 @@ const addRecipe = async (request, response) => {
         await client.connect();
         const db = client.db("healthblog");
 
-        const {effect, ingredient, instruction, timing} = request.body;
+        const {number, type, name, img, ingredient, instruction} = request.body;
 
         const id = uuidv4()
 
-        const result = await db.collection("recipes").insertOne({id: id, effect, ingredient, instruction,timing})
+        const result = await db.collection("recipes").insertOne({id: id,  number, type, name, img, ingredient, instruction})
 
         
         // const query = { flight: flight, "seats.id": seat };
