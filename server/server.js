@@ -40,27 +40,27 @@ const {
     // ---------------------------------
     
    app.get("/api/get-recipes", getRecipes) //all 
-    .get("/api/get-recipe/:id", getRecipe) //get one
-    .post("/api/add-recipe", addRecipe)
-    .patch("/api/update-recipe", updateRecipe)
-    .delete("/api/delete-recipe/:id", deleteRecipe)
+    app.get("/api/get-recipe/:id", getRecipe) //get one
+    app.post("/api/add-recipe", addRecipe)
+    app.patch("/api/update-recipe", updateRecipe)
+    app.delete("/api/delete-recipe/:id", deleteRecipe)
 
-    .get("/api/get-comments", getComments)
-    .get("/api/get-comment/:id", getComment)
-    .post("/api/add-comment", addComment)
-    .patch("/api/update-comment/:id", updateComment)
-    .delete("/api/delete-comment/:id", deleteComment)
+    app.get("/api/get-comments", getComments)
+    app.get("/api/get-comment/:id", getComment)
+    app.post("/api/add-comment", addComment)
+    app.patch("/api/update-comment/:id", updateComment)
+    app.delete("/api/delete-comment/:id", deleteComment)
 
-    .get("/api/get-users", getUsers)
-    .get("/api/get-user/:id", getUser)
-    .post("/api/add-user", addUser)
+    app.get("/api/get-users", getUsers)
+    app.get("/api/get-user/:id", getUser)
+    app.post("/api/add-user", addUser)
     // .delete("/api/update-user/:id", updateUser)
 
     // ---------------------------------
     // Nothing to modify below this line
 
     // this is our catch all endpoint.
-    .get("*", (req, res) => {
+    app.get("*", (req, res) => {
         res.status(404).json({
         status: 404,
         message: "This is obviously not what you are looking for.",
@@ -68,7 +68,7 @@ const {
     })
 
     // Node spins up our server and sets it to listen on port 8000.
-    .listen(8000, () => console.log(`Listening on port 8000`));
+    app.listen(8000, () => console.log(`Listening on port 8000`));
 
 
 // // 
