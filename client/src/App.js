@@ -2,7 +2,7 @@ import react from 'react';
 import styled from "styled-components";
 
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState,useContext } from "react";
 import GlobalStyles from "./GlobalStyles"
 
@@ -21,22 +21,23 @@ const App = () => {
     <BrowserRouter>
       <GlobalStyles />
       <Header />
+      {/* <Login /> */}
       <Main>
-        {/* <Switch> */}
-        <Routes>
-          <Route exact path="/"  element={ <Homepage />}>
-          
+        <Switch>
+        {/* <Routes> */}
+          <Route exact path="/">
+              <Homepage />
           </Route>
-          <Route exact path="/login"  element={ <Login />}>
-            
+          <Route exact path="/login">
+              <Login />
           </Route>
-          <Route path="/add-recipe" element={  <Addrecipe/>}>
-           
+          <Route path="/add-recipe">
+            <Addrecipe />
           </Route>
-          <Route path="/view-recipe" element={  <Viewrecipe/>}>
-            
+          <Route path="/view-recipe">
+            <Viewrecipe />
           </Route>
-        </Routes>
+        </Switch>
         <Footer />
       </Main>
     </BrowserRouter>

@@ -14,12 +14,14 @@ const Header = () => {
       <Nav>
       
         <>
-test
+
         {
-          <StyledNavLink to="/login">Login</StyledNavLink>
+          // <StyledNavLink to="/login">Login</StyledNavLink>
+          <NavLink to="/login">Login</NavLink>
         }
         {
-          <StyledNavLink to="/homepage">Home</StyledNavLink>
+          // <StyledNavLink to="/homepage">Home</StyledNavLink>
+          <NavLink to="/homepage">Home</NavLink>
         }
         </>
       </Nav>
@@ -57,10 +59,10 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   transition: all ease 400ms;
 
-  &:disabled {
+  /* &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-  }
+  } */
 
   &:hover {
     background: var(--color-alabama-crimson);
