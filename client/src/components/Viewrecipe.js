@@ -26,7 +26,24 @@ const Viewrecipe = () => {
   <>
  
     <div>Viewrecipe</div>
-    {recipes&&recipes.length >0 ? ("hello"):(null)
+    {/* {recipes&&recipes.length >0 ? ( */}
+     { recipes.data?.map((el)=>{
+        // console.log("el",el)
+        let imgv = "image/"+el.img
+        return(
+        <div>
+         {el.type},
+         {el.number},
+         {el.name}
+         <img src={imgv} width="200" height="100"/>
+         {el.ingredient}
+         {el.instruction}
+         </div>
+        )
+
+       
+      })
+     
 
     }
 
