@@ -65,7 +65,7 @@ const getRecipes = async (request, response) => {
         await client.connect();
         const db = client.db("healthblog");
         const result = await db.collection("recipes").find().toArray();
-        console.log("result", result)
+        // console.log("result", result)
 
         if(result){
             response.status(200).json({
@@ -76,7 +76,7 @@ const getRecipes = async (request, response) => {
         }else{
             response.status(404).json({
                 status: 404,
-                message: "reservations not found"
+                message: "recipe not found"
             })
         }
         client.close();

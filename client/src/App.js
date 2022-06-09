@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/add-recipe">
             <Addrecipe />
           </Route>
-          <Route path="/view-recipe">
+          <Route path="/viewrecipe">
             <Viewrecipe />
           </Route>
         </Switch>

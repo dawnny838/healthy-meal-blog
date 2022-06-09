@@ -23,6 +23,10 @@ const Header = () => {
           // <StyledNavLink to="/homepage">Home</StyledNavLink>
           <NavLink to="/homepage">Home</NavLink>
         }
+        {
+          // <StyledNavLink to="/homepage">Home</StyledNavLink>
+          <NavLink to="/viewrecipe">Viewrecipes</NavLink>
+        }
         </>
       </Nav>
     </Wrapper>
