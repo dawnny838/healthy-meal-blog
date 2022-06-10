@@ -66,11 +66,19 @@ const CommentForm = ({user,email}) => {
     <Wrapper>
       {/* <FlightSelect currentFlight={currentFlight} setCurrentFlight={setCurrentFlight}/>
       <h1 className="">Select your seat and Provide your information!</h1> */}
-        <cForm>
+        <Cform>
           {/* <Plane currentSeat={currentSeat} setCurrentSeat={setCurrentSeat}/> */}
           
           <Form onSubmit={handleSubmit}>
-              <input 
+              <textarea cols="60" rows="5"
+                placeholder="Your Comment"
+                required
+                value={comment}
+                onChange={(e)=>{
+                  setComment(e.target.value)}}
+              
+              />
+              {/* <input 
                 type= "text"
                 placeholder="Your Comment"
                 required
@@ -78,7 +86,7 @@ const CommentForm = ({user,email}) => {
                 onChange={(e)=>{
                   setComment(e.target.value)
               }}
-              />
+              /> */}
 
 
               {/* <input 
@@ -92,7 +100,7 @@ const CommentForm = ({user,email}) => {
               /> */}
             <button type="submit">Submit</button>
           </Form>
-        </cForm> 
+        </Cform> 
     </Wrapper>
   );
 };
@@ -106,7 +114,7 @@ h1{
 }
 `
 
-const cForm = styled.div`
+const Cform = styled.div`
   display: flex;
   justify-content: center;
 	align-items: center;

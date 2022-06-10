@@ -64,7 +64,14 @@ const Login=()=> {
           <h3>{user.name}</h3>
 
           {/* j10 add */}
-          <CommentForm user = {user.name} email={user.email}/>
+
+          {/* {(user.name !==null)? (<CommentForm user = {user.name} email={user.email}/>): null} */}
+
+        </div>
+      }
+       {user.name &&
+        <div>
+            <CommentForm user = {user.name} email={user.email}/>
 
         </div>
       }
