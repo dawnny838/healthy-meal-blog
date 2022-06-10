@@ -249,11 +249,11 @@ const addComment = async (request, response) => {
         await client.connect();
         const db = client.db("healthblog");
 
-        const {comment} = request.body;
+        const {user,email, comment} = request.body;
 
         const id = uuidv4()
 
-        const result = await db.collection("comments").insertOne({id: id, comment}) 
+        const result = await db.collection("comments").insertOne({id: id, user,email,comment}) 
        
         if(result){
             response.status(201).json({

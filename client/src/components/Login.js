@@ -5,6 +5,9 @@
 
 import {useEffect, useState} from 'react';
 import jwt_decode from 'jwt-decode';
+
+import CommentForm from './CommentForm';
+
 // const { MongoClient } = require("mongodb");
 // const path = require("path");
 // require("dotenv").config({path: "../server/.env"});
@@ -59,6 +62,10 @@ const Login=()=> {
           {/* add ? for optional chaining */}
           <img src={user?.picture} alt="no img"></img>
           <h3>{user.name}</h3>
+
+          {/* j10 add */}
+          <CommentForm user = {user.name} email={user.email}/>
+
         </div>
       }
 
