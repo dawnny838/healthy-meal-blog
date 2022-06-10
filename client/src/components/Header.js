@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
 import { useContext } from "react";
+import { BiHomeHeart } from "react-icons/bi";
+import { FiLogIn } from "react-icons/fi";
 
 const Header = () => {
 
@@ -18,7 +20,7 @@ const Header = () => {
        
         {
           // <StyledNavLink to="/homepage">Home</StyledNavLink>
-          <SNavLink to="/homepage">Home</SNavLink>
+          <SNavLink to="/homepage"><BiHomeHeart/> Home</SNavLink>
         }
         {
           <SNavLink to="/viewrecipe">View Recipes</SNavLink>
@@ -30,7 +32,7 @@ const Header = () => {
           <SNavLink to="/viewcomment">View Comment</SNavLink>
         }
         {
-          <SNavLink to="/login">Login/addComment</SNavLink>
+          <SNavLink to="/login"><FiLogIn/>Login/addComment</SNavLink>
         }
         </>
       </Nav>
@@ -52,7 +54,8 @@ const Nav = styled.nav`
   align-items: center;
 `;
 const SNavLink = styled(NavLink)`
-  background: var(--color-selective-yellow);
+  background: olive;
+  /* background: var(--color-selective-yellow); */
   border: 1px solid transparent;
   border-radius: 4px;
   color: var(--color-alabama-crimson);

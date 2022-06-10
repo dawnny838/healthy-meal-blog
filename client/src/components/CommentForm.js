@@ -70,7 +70,7 @@ const CommentForm = ({user,email}) => {
           {/* <Plane currentSeat={currentSeat} setCurrentSeat={setCurrentSeat}/> */}
           
           <Form onSubmit={handleSubmit}>
-              <textarea cols="60" rows="5"
+              <textarea cols="200" rows="3"
                 placeholder="Your Comment"
                 required
                 value={comment}
@@ -136,8 +136,22 @@ const Form = styled.form`
     padding: 8px;
 }
 
+textarea{
+  background-color: light-gray;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 400px;
+  font-size:16px;
+}
+
 button{
-  background-color: var(--color-alabama-crimson);
+  /* background-color: var(--color-alabama-crimson); */
+  background-color: blue;
+  color: whitesmoke;
+  border-radius: 10%;
+  width: 80px;
+  height: 40px;
+
   cursor: pointer;
   &:hover,&ative{
         transform: scale(1.1, 1.1);
