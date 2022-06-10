@@ -15,19 +15,22 @@ const Header = () => {
       
         <>
 
-        {
-          // <StyledNavLink to="/login">Login</StyledNavLink>
-          <NavLink to="/login">Login</NavLink>
-        }
+       
         {
           // <StyledNavLink to="/homepage">Home</StyledNavLink>
-          <NavLink to="/homepage">Home</NavLink>
+          <SNavLink to="/homepage">Home</SNavLink>
         }
         {
-          <NavLink to="/viewrecipe">View Recipes</NavLink>
+          <SNavLink to="/viewrecipe">View Recipes</SNavLink>
         }
         {
-          <NavLink to="/viewingredient">View Ingredient</NavLink>
+          <SNavLink to="/viewingredient">View Ingredient</SNavLink>
+        }
+        {
+          <SNavLink to="/viewcomment">View Comment</SNavLink>
+        }
+        {
+          <SNavLink to="/login">Login/addComment</SNavLink>
         }
         </>
       </Nav>
@@ -48,7 +51,7 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: center;
 `;
-const StyledNavLink = styled(NavLink)`
+const SNavLink = styled(NavLink)`
   background: var(--color-selective-yellow);
   border: 1px solid transparent;
   border-radius: 4px;
