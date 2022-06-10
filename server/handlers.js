@@ -88,6 +88,35 @@ const getRecipes = async (request, response) => {
 };
 
 //----------------------------------------------------------------
+const getIngredients = async (request, response) => {
+    const client = new MongoClient(MONGO_URI, options);
+
+    try{
+        await client.connect();
+        const db = client.db("healthblog");
+        const result = await db.collection("ingredients").find().toArray();
+        // console.log("result", result)
+
+        if(result){
+            response.status(200).json({
+                status: 200,
+                data: result,
+                message: "ingredient found"
+            })
+        }else{
+            response.status(404).json({
+                status: 404,
+                message: "ingredient not found"
+            })
+        }
+        client.close();
+        console.log("getIngredients disconnected!");
+    }
+    catch(err){
+        console.log(err.stack);
+    }
+};
+//----------------------------------------------------------------
 const getRecipe = async(request, response) => {
     const client = new MongoClient(MONGO_URI, options);
     
@@ -518,5 +547,7 @@ module.exports = {
     getUsers,
     getUser,
     addUser,
+
+    getIngredients
    
 };

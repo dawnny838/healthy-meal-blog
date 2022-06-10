@@ -23,6 +23,8 @@ const {
   getUsers,
   getUser,
   addUser,
+
+  getIngredients,
 } = require("./handlers");
 
 // express()
@@ -40,6 +42,8 @@ const {
     // ---------------------------------
     
    app.get("/api/get-recipes", getRecipes) //all 
+   app.get("/api/get-ingredients", getIngredients) //all 
+   
     app.get("/api/get-recipe/:id", getRecipe) //get one
     app.post("/api/add-recipe", addRecipe)
     app.patch("/api/update-recipe", updateRecipe)

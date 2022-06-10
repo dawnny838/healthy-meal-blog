@@ -13,6 +13,7 @@ import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Addrecipe from "./components/Addrecipe";
 import Viewrecipe from "./components/Viewrecipe";
+import Viewingredient from "./components/Viewingredient";
 
 
 const App = () => {
@@ -36,6 +37,9 @@ const App = () => {
           </Route>
           <Route path="/viewrecipe">
             <Viewrecipe />
+          </Route>
+          <Route path="/viewingredient">
+            <Viewingredient />
           </Route>
         </Switch>
         <Footer />

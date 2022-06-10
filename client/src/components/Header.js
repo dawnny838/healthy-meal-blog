@@ -24,8 +24,10 @@ const Header = () => {
           <NavLink to="/homepage">Home</NavLink>
         }
         {
-          // <StyledNavLink to="/homepage">Home</StyledNavLink>
-          <NavLink to="/viewrecipe">Viewrecipes</NavLink>
+          <NavLink to="/viewrecipe">View Recipes</NavLink>
+        }
+        {
+          <NavLink to="/viewingredient">View Ingredient</NavLink>
         }
         </>
       </Nav>
