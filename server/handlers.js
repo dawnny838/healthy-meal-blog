@@ -150,6 +150,42 @@ const getRecipe = async(request, response) => {
     }
 };
 
+
+//----------------------------------------------------------------
+const getRecipeByType = async(request, response) => {
+    const client = new MongoClient(MONGO_URI, options);
+    
+    const type1 = request.params.type;
+    
+    try{
+        await client.connect();
+        const db = client.db("healthblog");
+        // change find to findOne, to avoid to toArray
+        const result = await db.collection("recipes").find({"type": type1}).toArray();
+        // console.log("result", result)
+
+        if(result){
+            response.status(200).json({
+                status: 200,
+                type1,
+                data: result,
+                message: "recipe type found"
+            })
+        }else{
+            response.status(404).json({
+                status: 404,
+                message: "recipe type not found"
+            })
+        }
+        client.close();
+        console.log("getRecipe byType disconnected!");
+    }
+    catch(err){
+        console.log(err.stack);
+    }
+};
+
+
 //----------------------------------------------------------------
 const deleteRecipe = async(request, response) => {
 
@@ -548,6 +584,7 @@ module.exports = {
     getUser,
     addUser,
 
-    getIngredients
+    getIngredients,
+    getRecipeByType 
    
 };

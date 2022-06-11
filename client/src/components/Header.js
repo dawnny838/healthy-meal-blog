@@ -20,7 +20,7 @@ const Header = () => {
        
         {
           // <StyledNavLink to="/homepage">Home</StyledNavLink>
-          <SNavLink to="/homepage"><BiHomeHeart/> Home</SNavLink>
+          <SNavLink to="/"><BiHomeHeart/> Home</SNavLink>
         }
         {
           <SNavLink to="/viewrecipe">View Recipes</SNavLink>

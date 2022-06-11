@@ -5,10 +5,16 @@ import styled from "styled-components";
 const Viewrecipe = () => {
 
   const [recipes, setRecipes] = useState([]);
+  const [recipeType, setRecipeType] = useState([]);
+
+  const handleTypeChange =(e)=>{
+    setRecipeType(e.target.value)
+};
   
   useEffect(() => {
     
-    fetch(`/api/get-recipes`)
+    fetch(`/api/get-recipebytype/${recipeType}`)
+    // fetch(`/api/get-recipebytype/Sushi`)
       .then(response =>response.json())
       .then((data)=>{
         setRecipes(data)
@@ -20,14 +26,27 @@ const Viewrecipe = () => {
       });
   
   // }, [recipes]);
-  }, []);
+  }, [recipeType]);
 
   return (
   <>
  
-    <h1>View Recipe</h1>
+    <H1>View Recipe</H1>
     <br></br>
     {/* {recipes&&recipes.length >0 ? ( */}
+
+    <Wrapper0>
+            <h3>Recipe Type</h3>
+            <DropDown>
+                <select recipeType={recipeType} onChange={handleTypeChange}>
+                    <option value="Choose a Flight">Choose a Recipe Type</option> 
+                    <option value="Sushi">Sushi</option> 
+                    <option value="Tea">Tea</option> 
+                    <option value="Soup">Soup</option> 
+                    
+                </select>
+            </DropDown>
+        </Wrapper0>
     
      { recipes.data?.map((el)=>{
         // console.log("el",el)
@@ -49,6 +68,25 @@ const Viewrecipe = () => {
 }
 
 export default Viewrecipe
+
+const Wrapper0 = styled.div`
+    display: flex;
+    /* background-color: red; */
+    height: 120px;
+    /* width: 300px; */
+
+h3{
+    margin: 12px;
+}
+`
+
+const DropDown = styled.div`
+    margin-top: 23px;
+`
+
+const H1 = styled.h1`
+margin-left: 12px;
+`
 
 const Wrapper = styled.div`
   display: grid;
