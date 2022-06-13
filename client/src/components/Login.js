@@ -1,6 +1,7 @@
 
 import {useEffect, useState} from 'react';
 import jwt_decode from 'jwt-decode';
+import styled from 'styled-components';
 
 import CommentForm from './CommentForm';
 
@@ -45,21 +46,23 @@ const Login=()=> {
 
   return (
     
-    <div className='App'>
+    <Wrapper className='App'>
       <div id="signInDiv"></div>
+
+      <Div1>
       {Object.keys(user).length !==0 &&
        <button onClick={(e)=>handleSignout(e)}>Sign Out</button>
       }
-     
+      </Div1>
       
       
       {user &&
         <div>
           {/* add ? for optional chaining */}
-          <img src={user?.picture} alt="no img"></img>
-          <h3>{user.name}</h3>
+          {/* <img src={user?.picture} alt="no img"></img> */}
 
-          {/* j10 add */}
+          <img src={user?.picture} width="80" alt=""></img>
+          <h3>{user.name}</h3>
 
           {/* {(user.name !==null)? (<CommentForm user = {user.name} email={user.email}/>): null} */}
 
@@ -72,8 +75,15 @@ const Login=()=> {
         </div>
       }
 
-    </div>          
+    </Wrapper>          
   );
 }
 
 export default Login;
+
+const Wrapper = styled.div`
+margin-left: 5px;
+`
+const Div1 = styled.div`
+margin-bottom: 5px;
+`

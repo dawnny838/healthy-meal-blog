@@ -320,7 +320,7 @@ const getComments = async (request, response) => {
         await client.connect();
         const db = client.db("healthblog");
         const result = await db.collection("comments").find().toArray();
-        console.log("result", result)
+        // console.log("result", result)
 
         if(result){
             response.status(200).json({

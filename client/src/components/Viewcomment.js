@@ -11,7 +11,7 @@ const Viewcomment = () => {
     fetch(`/api/get-comments`)
       .then(response =>response.json())
       .then((data)=>{
-        console.log("comments",data)
+        // console.log("comments",data)
         setcomments(data)
          
       })
@@ -46,7 +46,7 @@ export default Viewcomment
 const Wrapper = styled.div`
   display: grid;
   grid-template-rows: repeat(4,30px) ;
-  grid-template-columns: 30px 150px;
+  grid-template-columns: 30px 250px;
   gap: 10px 20px;
   background: #fff;
   position: relative;
