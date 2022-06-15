@@ -541,7 +541,7 @@ const getUser= async(request, response) => {
         await client.connect();
         const db = client.db("healthblog");
         // change find to findOne, to avoid to toArray
-        const result = await db.collection("users").findOne({id: id});
+        const result = await db.collection("users").findOne({name: id});
         // console.log("result", result)
 
         if(result){

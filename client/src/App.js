@@ -15,6 +15,7 @@ import Addrecipe from "./components/Addrecipe";
 import Viewrecipe from "./components/Viewrecipe";
 import Viewingredient from "./components/Viewingredient";
 import Viewcomment from "./components/Viewcomment";
+import Admin from "./components/Admin";
 
 
 
@@ -47,6 +48,10 @@ const App = () => {
           <Route path="/viewcomment">
             <Viewcomment />
           </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+         
         </Switch>
         <Footer />
       </Main>

@@ -34,6 +34,9 @@ const Header = () => {
         {
           <SNavLink to="/login"><FiLogIn/>Login/addComment</SNavLink>
         }
+        {
+          <SNavLink to="/Admin"><FiLogIn/>Admin/addRecipe</SNavLink>
+        }
         </>
       </Nav>
     </Wrapper>
